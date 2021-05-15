@@ -7,7 +7,6 @@ class Beverage
     public float $price;
     public string $temperature;
 
-
     /**
      * Beverage constructor.
      */
@@ -34,11 +33,9 @@ class Beer extends Beverage
      * @param string $name
      * @param float $alcoholpercentage
      */
-    public function __construct(string $color, float $price, string $temperature, string $name, float $alcoholpercentage)
+    public function __construct(string $name, float $alcoholpercentage, string $color, float $price, string $temperature)
     {
-        $this->color = $color;
-        $this->price = $price;
-        $this->temperature = $temperature;
+        parent::__construct($color, $price, $temperature);
         $this->name = $name;
         $this->alcoholpercentage = $alcoholpercentage;
     }
@@ -54,9 +51,10 @@ $cola = new Beverage('black', 2);
 echo $cola->getInfo();
 echo $cola->temperature . PHP_EOL;
 
-$duvel =  new Beer('blond', 3.5, 'cold', 'Duvel', 8.5);
+$duvel =  new Beer('Duvel', 8.5, 'blond', 3.5, 'cold');
 echo $duvel->getAlcoholpercentage() . '%' . PHP_EOL;
 echo $duvel->alcoholpercentage . '%' . PHP_EOL;
 echo $duvel->color . PHP_EOL;
 echo $duvel->getInfo();
 echo $cola->getAlcoholpercentage();
+

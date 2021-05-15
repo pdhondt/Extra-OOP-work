@@ -55,6 +55,7 @@ class Beer extends Beverage
 }
 
 $duvel =  new Beer('blond', 3.5, 'cold', 'Duvel', 8.5);
+var_dump($duvel);
 echo $duvel->getAlcoholpercentage() . '%' . PHP_EOL;
 //echo $duvel->alcoholpercentage . '%' . PHP_EOL;
 echo $duvel->getColor() . PHP_EOL;
